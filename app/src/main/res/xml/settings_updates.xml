@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        android:title="@string/pref_category_app_updates">
+        <SwitchPreference
+            android:icon="@drawable/ic_baseline_notifications_active_24"
+            android:key="goplay_auto_check_updates"
+            android:summary="@string/goplay_auto_check_updates_summary"
+            android:title="@string/goplay_auto_check_updates_title"
+            app:defaultValue="true" />
+
+        <SwitchPreference
+            android:icon="@drawable/ic_baseline_dns_24"
+            android:key="goplay_download_wifi_only"
+            android:summary="@string/goplay_download_wifi_only_summary"
+            android:title="@string/goplay_download_wifi_only_title"
+            app:defaultValue="false" />
+
+        <SwitchPreference
+            android:icon="@drawable/ic_baseline_developer_mode_24"
+            android:key="goplay_notify_beta"
+            android:summary="@string/goplay_notify_beta_summary"
+            android:title="@string/goplay_notify_beta_title"
+            app:defaultValue="false" />
+
+        <Preference
+            android:icon="@drawable/ic_baseline_system_update_24"
+            android:key="goplay_manual_check_update_key"
+            android:title="@string/goplay_check_updates_now" />
+
+        <Preference
+            android:icon="@drawable/baseline_description_24"
+            android:key="goplay_current_version_key"
+            android:title="@string/goplay_current_version_title" />
+
+        <Preference
+            android:icon="@drawable/hourglass_24"
+            android:key="goplay_last_checked_key"
+            android:title="@string/goplay_last_checked_title" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/pref_category_backup">
+        <Preference
+            android:icon="@drawable/baseline_save_as_24"
+            android:key="@string/backup_key"
+            android:title="@string/backup_settings" />
+
+        <Preference
+            android:icon="@drawable/baseline_save_as_24"
+            android:key="@string/automatic_backup_key"
+            android:title="@string/backup_frequency" />
+
+        <Preference
+            android:icon="@drawable/baseline_restore_page_24"
+            android:key="@string/restore_key"
+            android:title="@string/restore_settings" />
+
+        <Preference
+            android:icon="@drawable/ic_baseline_folder_open_24"
+            android:key="@string/backup_path_key"
+            android:title="@string/backup_path_title" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/pref_category_extensions">
+        <SwitchPreference
+            android:defaultValue="true"
+            android:icon="@drawable/ic_baseline_extension_24"
+            android:key="@string/auto_update_plugins_key"
+            android:title="@string/automatic_plugin_updates" />
+
+        <Preference
+            android:icon="@drawable/ic_baseline_extension_24"
+            android:key="@string/auto_download_plugins_key"
+            android:title="@string/automatic_plugin_download"
+            android:summary="@string/automatic_plugin_download_summary" />
+
+        <Preference
+            android:icon="@drawable/ic_baseline_extension_24"
+            android:key="@string/manual_update_plugins_key"
+            android:title="@string/update_plugins"
+            android:summary="@string/update_plugins_manually"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/pref_category_actions">
+        <Preference
+            android:icon="@drawable/baseline_description_24"
+            android:key="@string/show_logcat_key"
+            android:title="@string/show_log_cat" />
+        <Preference
+            android:icon="@drawable/ic_baseline_construction_24"
+            android:title="@string/redo_setup_process"
+            app:key="@string/redo_setup_key" />
+    </PreferenceCategory>
+</PreferenceScreen>
