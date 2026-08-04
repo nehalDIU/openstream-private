@@ -13,7 +13,7 @@ import com.lagradost.cloudstream3.utils.AppContextUtils.filterProviderByPreferre
 object GoPlayRepoManager {
 
     /**
-     * Checks if the default GoPlay repository URL is registered in RepositoryManager
+     * Checks if the default Openstream repository URL is registered in RepositoryManager
      */
     fun isDefaultRepositoryAdded(): Boolean {
         return RepositoryManager.getRepositories().any {
@@ -54,7 +54,7 @@ object GoPlayRepoManager {
         activity: Activity,
         onProgress: ((String, Int) -> Unit)? = null
     ): Result<RepositoryData> {
-        onProgress?.invoke("Initializing GoPlay Repository...", 10)
+        onProgress?.invoke("Initializing Openstream Repository...", 10)
 
         var attempts = 0
         var repository: Repository? = null
@@ -70,7 +70,7 @@ object GoPlayRepoManager {
                     AppConfig.LOG_TAG,
                     "Fetching repository manifest (Attempt $attempts/${AppConfig.MAX_RETRIES}): ${AppConfig.DEFAULT_REPOSITORY_URL}"
                 )
-                onProgress?.invoke("Connecting to GoPlay repository (Attempt $attempts)...", 20)
+                onProgress?.invoke("Connecting to Openstream repository (Attempt $attempts)...", 20)
                 repository = RepositoryManager.parseRepository(AppConfig.DEFAULT_REPOSITORY_URL)
             } catch (e: Throwable) {
                 lastException = e
@@ -88,7 +88,7 @@ object GoPlayRepoManager {
         if (repository == null) {
             Log.e(
                 AppConfig.LOG_TAG,
-                "Failed to download GoPlay repository after $attempts attempts.",
+                "Failed to download Openstream repository after $attempts attempts.",
                 lastException
             )
             return Result.failure(lastException ?: Exception("Failed to download repository after retries."))

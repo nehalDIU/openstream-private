@@ -17,5 +17,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "GoPlay"
+rootProject.name = "Openstream"
 include(":app", ":library", ":docs")

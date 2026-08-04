@@ -11,7 +11,7 @@ import com.lagradost.cloudstream3.BuildConfig
 
 object FirebaseInitializer {
 
-    private const val TAG = "GoPlayFirebase"
+    private const val TAG = "OpenstreamFirebase"
     private var isInitialized = false
 
     /**

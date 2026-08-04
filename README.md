@@ -1,4 +1,4 @@
-# CloudStream
+# Openstream
 
 **⚠️ Warning: By default, this app doesn't provide any video sources; you have to install extensions to add functionality to the app.**
 
@@ -21,9 +21,9 @@
 
 ## About us: 
 
-**CloudStream is a media center that prioritizes and emphasizes complete freedom and flexibility for users and developers.** 
+**Openstream is a media center that prioritizes and emphasizes complete freedom and flexibility for users and developers.** 
 
-CloudStream is an extension-based multimedia player with tracking support. There are extensions to view videos from: 
+Openstream is an extension-based multimedia player with tracking support. There are extensions to view videos from: 
 
 + [Librevox (audio-books)](https://librivox.org/) 
 + [Youtube](https://www.youtube.com/)
@@ -37,7 +37,7 @@ CloudStream is an extension-based multimedia player with tracking support. There
 
 #### Important Copyright Note: 
 
-Our documentation is unmaintained and open to contributions; therefore, apps and sources, extensions in recommended sources, and recommended apps are not officially moderated or endorsed by CloudStream; if you or another copyright owner identify an extension that breaches your copyright, please let us know. 
+Our documentation is unmaintained and open to contributions; therefore, apps and sources, extensions in recommended sources, and recommended apps are not officially moderated or endorsed by Openstream; if you or another copyright owner identify an extension that breaches your copyright, please let us know. 
 
 
 #### Features:
@@ -53,7 +53,7 @@ Our documentation is unmaintained and open to contributions; therefore, apps and
 
 ## Installation: 
 
-Our documentation provides the steps to install and configure CloudStream for your streaming needs.
+Our documentation provides the steps to install and configure Openstream for your streaming needs.
 
 [Getting Started With CloudStream:](https://recloudstream.github.io/csdocs/)
 
@@ -83,7 +83,7 @@ While we **actively** accept issues and pull requests, we do require you fill ou
 
 ### Extensions:
  
-**Further details on creating extensions for CloudStream are found in our documentation.**
+**Further details on creating extensions for Openstream are found in our documentation.**
 
 [Guide: For Extension Developers](https://recloudstream.github.io/csdocs/devs/gettingstarted/) 
 
@@ -93,7 +93,7 @@ While we **actively** accept issues and pull requests, we do require you fill ou
 
 As well as providing clear install steps, our [website](https://dweb.link/ipns/cloudstream.on.fleek.co/) includes a wide variety of other tools, such as: 
 - [Troubleshooting](https://recloudstream.github.io/csdocs/troubleshooting/)
-- [Further CloudStream Repositories](https://recloudstream.github.io/csdocs/repositories/) 
+- [Further Openstream Repositories](https://recloudstream.github.io/csdocs/repositories/) 
 - Set-Up for other devices, such as:
   - [Android TV](https://recloudstream.github.io/csdocs/other-devices/tv/)
   - [Windows](https://recloudstream.github.io/csdocs/other-devices/windows/)

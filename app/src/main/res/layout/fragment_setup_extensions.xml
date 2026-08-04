@@ -23,7 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Setting up GoPlay Extensions"
+        android:text="Setting up Openstream Extensions"
         android:textColor="?attr/colorOnBackground"
         android:textSize="22sp"
         android:textStyle="bold" />
@@ -63,7 +63,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:gravity="center"
-            android:text="Connecting to GoPlay repository..."
+            android:text="Connecting to Openstream repository..."
             android:textColor="?attr/colorOnBackground"
             android:textSize="14sp" />
     </LinearLayout>
@@ -83,7 +83,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Unable to download GoPlay repository after multiple attempts.\nPlease check your network connection and try again."
+            android:text="Unable to download Openstream repository after multiple attempts.\nPlease check your network connection and try again."
             android:textColor="?attr/colorError"
             android:textSize="14sp" />
 

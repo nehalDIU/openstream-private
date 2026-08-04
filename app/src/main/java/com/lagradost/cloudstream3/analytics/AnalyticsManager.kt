@@ -13,7 +13,7 @@ import java.util.concurrent.ConcurrentHashMap
 
 object AnalyticsManager {
 
-    private const val TAG = "GoPlayAnalytics"
+    private const val TAG = "OpenstreamAnalytics"
     private var firebaseAnalytics: FirebaseAnalytics? = null
     private val activeTraces = ConcurrentHashMap<String, Trace>()
 

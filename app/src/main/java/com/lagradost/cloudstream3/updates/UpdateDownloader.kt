@@ -23,8 +23,8 @@ class UpdateDownloader(private val context: Context) {
 
         val uri = Uri.parse(updateResponse.apkUrl)
         val request = DownloadManager.Request(uri).apply {
-            setTitle("GoPlay Update v${updateResponse.versionName}")
-            setDescription("Downloading GoPlay update...")
+            setTitle("Openstream Update v${updateResponse.versionName}")
+            setDescription("Downloading Openstream update...")
             setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED)
             setDestinationUri(Uri.fromFile(destinationFile))
             setMimeType("application/vnd.android.package-archive")
@@ -82,7 +82,7 @@ class UpdateDownloader(private val context: Context) {
             if (!updateDir.exists()) {
                 updateDir.mkdirs()
             }
-            return File(updateDir, "GoPlay_v${versionName}.apk")
+            return File(updateDir, "Openstream_v${versionName}.apk")
         }
     }
 }

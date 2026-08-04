@@ -61,7 +61,7 @@ object UpdateManager {
      */
     fun checkForUpdateManual(activity: Activity, onFinished: (() -> Unit)? = null) {
         main {
-            showToast(activity, "Checking for GoPlay updates...", Toast.LENGTH_SHORT)
+            showToast(activity, "Checking for Openstream updates...", Toast.LENGTH_SHORT)
         }
         ioSafe {
             executeCheck(activity, isManual = true, onFinished = onFinished)
@@ -96,7 +96,7 @@ object UpdateManager {
                 } else {
                     Log.d(UpdateConfig.LOG_TAG, "App is up to date: Installed v$installedName ($installedCode), Remote v${updateInfo.versionName} (${updateInfo.versionCode})")
                     if (isManual) {
-                        showToast(activity, "GoPlay is up to date! (v$installedName)", Toast.LENGTH_LONG)
+                        showToast(activity, "Openstream is up to date! (v$installedName)", Toast.LENGTH_LONG)
                     }
                 }
             } else {
@@ -110,7 +110,7 @@ object UpdateManager {
     }
 
     /**
-     * Displays GoPlay Material AlertDialog for new update.
+     * Displays Openstream Material AlertDialog for new update.
      */
     fun showUpdateDialog(activity: Activity, updateResponse: UpdateResponse) {
         val builder = AlertDialog.Builder(activity)
@@ -159,7 +159,7 @@ object UpdateManager {
         val downloadId = downloader.enqueueDownload(updateResponse, prefs.isWifiOnlyEnabled)
         activeDownloadId = downloadId
 
-        showToast(activity, "GoPlay update download started...", Toast.LENGTH_SHORT)
+        showToast(activity, "Openstream update download started...", Toast.LENGTH_SHORT)
         registerDownloadReceiver(activity.applicationContext, downloadId, updateResponse)
     }
 
@@ -212,7 +212,7 @@ object UpdateManager {
                 } else {
                     val err = installResult.exceptionOrNull()?.message ?: "Install failed"
                     Log.e(UpdateConfig.LOG_TAG, "Installation failed: $err")
-                    Toast.makeText(context, "GoPlay update installation error: $err", Toast.LENGTH_LONG).show()
+                    Toast.makeText(context, "Openstream update installation error: $err", Toast.LENGTH_LONG).show()
                 }
             }
         }

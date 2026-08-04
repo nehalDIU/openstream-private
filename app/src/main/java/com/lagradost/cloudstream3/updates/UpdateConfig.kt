@@ -28,5 +28,5 @@ object UpdateConfig {
     /**
      * Logging Tag for Analytics & Diagnostics
      */
-    const val LOG_TAG = "GoPlayUpdate"
+    const val LOG_TAG = "OpenstreamUpdate"
 }

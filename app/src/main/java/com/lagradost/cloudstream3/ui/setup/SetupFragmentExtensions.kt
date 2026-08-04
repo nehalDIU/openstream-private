@@ -94,7 +94,7 @@ class SetupFragmentExtensions : BaseFragment<FragmentSetupExtensionsBinding>(
                     binding.progressContainer.isVisible = false
                     binding.errorContainer.isVisible = true
                     val errorMsg = result.exceptionOrNull()?.localizedMessage
-                        ?: "Failed to download GoPlay repository. Please check your internet connection."
+                        ?: "Failed to download Openstream repository. Please check your internet connection."
                     binding.errorText.text = errorMsg
                 }
             }

@@ -1362,9 +1362,9 @@ class MainActivity : AppCompatActivity(), ColorPickerDialogListener, BiometricCa
                     val autoDownloadPlugin = AutoDownloadMode.getEnum(
                         settingsManager.getInt(
                             getString(R.string.auto_download_plugins_key),
-                            0
+                            AutoDownloadMode.All.value
                         )
-                    ) ?: AutoDownloadMode.Disable
+                    ) ?: AutoDownloadMode.All
                     if (autoDownloadPlugin != AutoDownloadMode.Disable) {
                         PluginManager.___DO_NOT_CALL_FROM_A_PLUGIN_downloadNotExistingPluginsAndLoad(
                             this@MainActivity,
