@@ -307,6 +307,7 @@ open class FullScreenPlayer : AbstractPlayerFragment<FragmentPlayerBinding>(
                 playerVideoTitleRez,
                 playerVideoInfo,
                 playerGoBackHolder,
+                playerVideoClock,
             ).forEach {
                 it.animateY(titleMove)
             }
