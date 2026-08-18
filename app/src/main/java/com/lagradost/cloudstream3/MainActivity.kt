@@ -1356,7 +1356,7 @@ class MainActivity : AppCompatActivity(), ColorPickerDialogListener, BiometricCa
                 }
 
                 ioSafe {
-                    com.lagradost.cloudstream3.plugins.GoPlayRepoManager.syncRepositoriesOnLaunch(this@MainActivity)
+                    com.lagradost.cloudstream3.plugins.OpenstreamRepoManager.syncRepositoriesOnLaunch(this@MainActivity)
 
                     //Automatically download not existing plugins, using mode specified.
                     val autoDownloadPlugin = AutoDownloadMode.getEnum(
@@ -2010,7 +2010,7 @@ class MainActivity : AppCompatActivity(), ColorPickerDialogListener, BiometricCa
         try {
             if (getKey<Boolean>(HAS_DONE_SETUP_KEY, false) != true) {
                 navController.navigate(R.id.navigation_setup_language)
-            } else if (!com.lagradost.cloudstream3.plugins.GoPlayRepoManager.isDefaultRepositoryAdded()
+            } else if (!com.lagradost.cloudstream3.plugins.OpenstreamRepoManager.isDefaultRepositoryAdded()
                 || (PluginManager.getPluginsOnline().isEmpty() && PluginManager.getPluginsLocal().isEmpty())
             ) {
                 navController.navigate(

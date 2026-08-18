@@ -9,7 +9,7 @@ import com.lagradost.cloudstream3.CloudStreamApp.Companion.setKey
 import com.lagradost.cloudstream3.R
 import com.lagradost.cloudstream3.databinding.FragmentSetupExtensionsBinding
 import com.lagradost.cloudstream3.mvvm.safe
-import com.lagradost.cloudstream3.plugins.GoPlayRepoManager
+import com.lagradost.cloudstream3.plugins.OpenstreamRepoManager
 import com.lagradost.cloudstream3.ui.BaseFragment
 import com.lagradost.cloudstream3.utils.Coroutines.ioSafe
 import com.lagradost.cloudstream3.utils.Coroutines.main
@@ -73,7 +73,7 @@ class SetupFragmentExtensions : BaseFragment<FragmentSetupExtensionsBinding>(
         binding.setupProgressText.text = getString(R.string.loading)
 
         ioSafe {
-            val result = GoPlayRepoManager.setupDefaultRepository(act) { statusText, progress ->
+            val result = OpenstreamRepoManager.setupDefaultRepository(act) { statusText, progress ->
                 main {
                     binding.setupProgressText.text = statusText
                     binding.setupProgressBar.progress = progress

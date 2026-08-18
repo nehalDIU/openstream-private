@@ -10,7 +10,7 @@ import kotlinx.coroutines.delay
 
 import com.lagradost.cloudstream3.utils.AppContextUtils.filterProviderByPreferredMedia
 
-object GoPlayRepoManager {
+object OpenstreamRepoManager {
 
     /**
      * Checks if the default Openstream repository URL is registered in RepositoryManager

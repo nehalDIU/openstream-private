@@ -70,7 +70,7 @@ class SetupFragmentLanguage : BaseFragment<FragmentSetupLanguageBinding>(
 
                 nextBtt.setOnClickListener {
                     val nextDestination = if (
-                        !com.lagradost.cloudstream3.plugins.GoPlayRepoManager.isDefaultRepositoryAdded()
+                        !com.lagradost.cloudstream3.plugins.OpenstreamRepoManager.isDefaultRepositoryAdded()
                         || (PluginManager.getPluginsOnline().isEmpty() && PluginManager.getPluginsLocal().isEmpty())
                     ) R.id.action_navigation_global_to_navigation_setup_extensions
                     else R.id.action_navigation_setup_language_to_navigation_setup_provider_languages
