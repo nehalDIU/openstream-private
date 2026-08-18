@@ -479,17 +479,18 @@ open class FullScreenPlayer : AbstractPlayerFragment<FragmentPlayerBinding>(
     }
 
     private fun setPlayBackSpeed(speed: Float) {
+        val clampedSpeed = speed.coerceIn(0.1f, 4.0f)
         try {
-            DataStoreHelper.playBackSpeed = speed
+            DataStoreHelper.playBackSpeed = clampedSpeed
             playerBinding?.playerSpeedBtt?.text =
-                getString(R.string.player_speed_text_format).format(speed)
+                getString(R.string.player_speed_text_format).format(clampedSpeed)
                     .replace(".0x", "x")
         } catch (e: Exception) {
             // the format string was wrong
             logError(e)
         }
 
-        player.setPlaybackSpeed(speed)
+        player.setPlaybackSpeed(clampedSpeed)
     }
 
     private fun skipOp() {
@@ -622,14 +623,19 @@ open class FullScreenPlayer : AbstractPlayerFragment<FragmentPlayerBinding>(
         }
     }
 
+    /** Formats a speed multiplier without trailing zeros, e.g. 1.0 -> "1x", 1.50 -> "1.5x". */
+    private fun formatSpeedLabel(speed: Float): String {
+        return "%.2f".format(speed).trimEnd('0').trimEnd('.', ',') + "x"
+    }
+
     @SuppressLint("SetTextI18n")
     fun updateSpeedDialogBinding(binding: SpeedDialogBinding) {
         val speed = player.getPlaybackSpeed()
-        binding.speedText.text = "%.2fx".format(speed).replace(".0x", "x")
+        binding.speedText.text = formatSpeedLabel(speed)
         // Android crashes if you don't round to an exact step size
-        binding.speedBar.value =
-            (speed.coerceIn(0.1f, 2.0f) / binding.speedBar.stepSize).roundToInt()
-                .toFloat() * binding.speedBar.stepSize
+        val snapped = (speed.coerceIn(0.1f, 4.0f) / binding.speedBar.stepSize).roundToInt()
+            .toFloat() * binding.speedBar.stepSize
+        binding.speedBar.value = snapped.coerceIn(binding.speedBar.valueFrom, binding.speedBar.valueTo)
     }
 
     private fun showSpeedDialog() {
@@ -644,9 +650,12 @@ open class FullScreenPlayer : AbstractPlayerFragment<FragmentPlayerBinding>(
         updateSpeedDialogBinding(binding)
         for ((view, speed) in arrayOf(
             binding.speed25 to 0.25f,
+            binding.speed50 to 0.5f,
+            binding.speed75 to 0.75f,
             binding.speed100 to 1.0f,
             binding.speed125 to 1.25f,
             binding.speed150 to 1.5f,
+            binding.speed175 to 1.75f,
             binding.speed200 to 2.0f,
         )) {
             view.setOnClickListener {
@@ -655,13 +664,18 @@ open class FullScreenPlayer : AbstractPlayerFragment<FragmentPlayerBinding>(
             }
         }
 
+        binding.speedReset.setOnClickListener {
+            setPlayBackSpeed(1.0f)
+            updateSpeedDialogBinding(binding)
+        }
+
         binding.speedMinus.setOnClickListener {
             setPlayBackSpeed(maxOf((player.getPlaybackSpeed() - 0.1f), 0.1f))
             updateSpeedDialogBinding(binding)
         }
 
         binding.speedPlus.setOnClickListener {
-            setPlayBackSpeed(minOf((player.getPlaybackSpeed() + 0.1f), 2.0f))
+            setPlayBackSpeed(minOf((player.getPlaybackSpeed() + 0.1f), 4.0f))
             updateSpeedDialogBinding(binding)
         }
 
@@ -680,13 +694,6 @@ open class FullScreenPlayer : AbstractPlayerFragment<FragmentPlayerBinding>(
             selectSpeedDialog = null
         }
 
-        // if (isLayout(PHONE)) {
-        //    val builder =
-        //        BottomSheetDialog(act, R.style.AlertDialogCustom)
-        //    builder.setContentView(binding.root)
-        //    builder.setOnDismissListener(dismiss)
-        //    builder.show()
-        //} else {
         val builder =
             AlertDialog.Builder(act, R.style.AlertDialogCustom)
                 .setView(binding.root)
@@ -694,7 +701,6 @@ open class FullScreenPlayer : AbstractPlayerFragment<FragmentPlayerBinding>(
         val dialog = builder.create()
         this.selectSpeedDialog = dialog
         dialog.show()
-        //}
     }
 
     private fun onClickChange() {
@@ -1137,7 +1143,7 @@ open class FullScreenPlayer : AbstractPlayerFragment<FragmentPlayerBinding>(
 
                 playBackSpeedEnabled = settingsManager.getBoolean(
                     ctx.getString(R.string.playback_speed_enabled_key),
-                    false
+                    true
                 )
                 playerRotateEnabled = settingsManager.getBoolean(
                     ctx.getString(R.string.rotate_video_key),
