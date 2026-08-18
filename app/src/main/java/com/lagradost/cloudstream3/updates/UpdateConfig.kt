@@ -14,9 +14,10 @@ object UpdateConfig {
     const val MAX_RETRY_COUNT = 3
 
     /**
-     * Throttling interval for automatic checks (24 hours in milliseconds)
+     * Minimum interval between automatic update checks, in milliseconds.
+     * 0 = check on every app open (Home screen load).
      */
-    const val CHECK_INTERVAL_MS = 86400000L
+    const val CHECK_INTERVAL_MS = 0L
 
     /**
      * Preference Defaults

@@ -1,13 +1,13 @@
-{
-    "versionCode": 72,
-    "versionName": "4.8.4",
+﻿{
+    "versionCode": 73,
+    "versionName": "4.8.5",
     "apkUrl": "https://pub-e9a64ec2e4424ee6b04d9dac6a883b3b.r2.dev/goplay.apk",
     "releaseNotes": [
-        "Openstream 4.8.4",
-        "Playback speed control (up to 4x, pitch-corrected) on by default",
-        "Internal cleanup and stability improvements"
+        "Openstream 4.8.5",
+        "App now checks for updates on every launch",
+        "Playback speed control (up to 4x, pitch-corrected) on by default"
     ],
     "mandatory": false,
-    "apkSize": 73329756,
-    "sha256": "be41bcd0a96c0e98765e0a8874e1dbfd9a7d1ce10eebd969c5a08c11c164aa71"
+    "apkSize": 73329845,
+    "sha256": "f20c39d5bfe23a9cca55d7fd3f426aeedf82f8c7fb56fe74387f79ab89cca633"
 }
