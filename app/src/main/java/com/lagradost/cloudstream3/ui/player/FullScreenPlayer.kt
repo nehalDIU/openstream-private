@@ -480,16 +480,9 @@ open class FullScreenPlayer : AbstractPlayerFragment<FragmentPlayerBinding>(
 
     private fun setPlayBackSpeed(speed: Float) {
         val clampedSpeed = speed.coerceIn(0.1f, 4.0f)
-        try {
-            DataStoreHelper.playBackSpeed = clampedSpeed
-            playerBinding?.playerSpeedBtt?.text =
-                getString(R.string.player_speed_text_format).format(clampedSpeed)
-                    .replace(".0x", "x")
-        } catch (e: Exception) {
-            // the format string was wrong
-            logError(e)
-        }
-
+        DataStoreHelper.playBackSpeed = clampedSpeed
+        // Keep a static "Speed" label on the button; the current multiplier is shown in the speed dialog.
+        playerBinding?.playerSpeedBtt?.text = getString(R.string.player_speed_label)
         player.setPlaybackSpeed(clampedSpeed)
     }
 

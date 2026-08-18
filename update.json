@@ -1,13 +1,13 @@
 {
-    "versionCode": 9999,
-    "versionName": "3.0.0",
+    "versionCode": 71,
+    "versionName": "4.8.3",
     "apkUrl": "https://pub-e9a64ec2e4424ee6b04d9dac6a883b3b.r2.dev/goplay.apk",
     "releaseNotes": [
-        "Openstream Release Version 3.0.0",
-        "New video player performance enhancements",
-        "Automated extension synchronization"
+        "Openstream 4.8.3",
+        "Player Speed button now shows a clean \"Speed\" label",
+        "Playback speed control (up to 4x, pitch-corrected) on by default"
     ],
     "mandatory": false,
-    "apkSize": 73325129,
-    "sha256": "1996ada572357f6bb9974750d5dc2fd4a4422c62061a516fb324129332ad8bb2"
+    "apkSize": 73329954,
+    "sha256": "2d9ed9b62ea02aa405fb3cd118fb3de5e86795c084a341cb737592c48c9a30ba"
 }
